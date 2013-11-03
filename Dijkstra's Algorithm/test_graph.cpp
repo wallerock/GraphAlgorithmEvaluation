@@ -4,7 +4,7 @@ using namespace std;
 
 
 int main(){
-Graph g(10, 0.2, 10);
+Graph g(10, 0.4, 10);
 
 int vc;
 int ec;

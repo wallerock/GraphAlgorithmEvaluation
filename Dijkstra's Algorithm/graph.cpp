@@ -20,7 +20,7 @@ Graph::Graph(int v, float d, int c) {
 		costMatrix[i] = new int[vertices];
 	}
 
-	srand(time(0));// set Seed pseudo-random number generator 	
+	srand(time(NULL));// set Seed pseudo-random number generator 	
 	
 	// Fill cost array by random generator
 	for (int i = 0; i < vertices; i++) {

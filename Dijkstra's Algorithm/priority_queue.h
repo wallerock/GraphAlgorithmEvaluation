@@ -21,5 +21,3 @@ class PriorityQueue {
 };
 
 
-/* use queue to save an integer array: int[0] keep the node number, 
-  int[1] keep the cost to source, and int[2] keep the last conectors number*/

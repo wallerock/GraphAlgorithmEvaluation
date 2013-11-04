@@ -12,7 +12,7 @@ class Graph {
 		int **costMatrix;	// Distance cost matrix
 	public:
 		Graph();                         //default constructor
-		Graph(int v, float d, int c);   //constructor
+		Graph(int v, float d, int c);    //constructor arg:vertices, density, cost
 		int V();                         //get_number_of_vertices
 		int E();                         //get_number_of_edges
 		bool adjacent(int x, int y);     //tests whether there is an edge from node x to node y.

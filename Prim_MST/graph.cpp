@@ -61,13 +61,24 @@ Graph::Graph(char* filename){
 	costMatrix[i] = new int[vertices];
     }
 
+    for (int i = 0; i < vertices; i++) {
+		for (int j = i; j < vertices; j++) {
+			if (i == j)	
+				costMatrix[i][j] = 0;   //same node are no cost
+			else {
+				costMatrix[i][j]=-1;  //no connection;
+			}
+		}
+	}
+
     while(file!=NULL){
         file>>node_a;
         file>>node_b;
         file>>cost;
+        //cout<< node_a<<" "<<node_b<<" "<<cost<<endl;
         add_edge(node_a,node_b,cost);
     }
-
+    
     file.close();
 }
 

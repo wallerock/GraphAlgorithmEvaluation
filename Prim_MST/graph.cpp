@@ -60,7 +60,8 @@ Graph::Graph(char* filename){
     for (int i = 0; i < vertices; i++) {
 	costMatrix[i] = new int[vertices];
     }
-
+    
+    //init the costMatrix
     for (int i = 0; i < vertices; i++) {
 		for (int j = i; j < vertices; j++) {
 			if (i == j)	

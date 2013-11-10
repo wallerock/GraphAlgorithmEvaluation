@@ -12,7 +12,7 @@ MST_Prim::MST_Prim (Graph G) {
 void MST_Prim::Do_Prim (){
         vector<bool> Flag (vertex_Count, false) ;
         Flag[0] = true ; //visted or unvisted
-
+        int cost_sum=0;
         int IndexA ;
         int IndexB ;
         int j = 0 ;
@@ -21,13 +21,16 @@ void MST_Prim::Do_Prim (){
             //find the less cost path.
             int i = 0 ;
             while (i < vertex_Count) {
-                // if vertex i is visted, pass it
+                // if vertex i is unvisted, pass it
+                //make i trace point from last time
                 if (!Flag[i]) {  
                     ++ i ;
                     continue ;
                 }
+                //find minimum path from i to j
                 for (int j = 0; j < vertex_Count; ++ j) {
-                   if(g.get_cost(i,j)!=-1){
+                   //if i is connected with j, and j is new path's point
+                   if(g.get_cost(i,j)>0){
                     if (!Flag[j] && MaxCost > g.get_cost(i,j)) { 
                         MaxCost = g.get_cost(i,j) ;
                         IndexA = i ;
@@ -37,7 +40,7 @@ void MST_Prim::Do_Prim (){
                 }
                 ++ i ;
             }
-            //find it, push it into tree
+            // push it into tree, update Flag[]
             Flag[IndexB] = true ;
             MSTree.push_back (TreeNode(IndexA, IndexB, MaxCost)) ;
             ++ j ;
@@ -45,5 +48,9 @@ void MST_Prim::Do_Prim (){
        //print MSTree
         for (vector<TreeNode>::const_iterator ite = MSTree.begin() ;ite != MSTree.end() ; ++ ite ) {
             cout << (*ite).Vertex_A << "->" << (*ite).Vertex_B << " : "<< (*ite).cost << endl ;
+            cost_sum=cost_sum+(*ite).cost;
         }
+       //print cost
+        cout <<"Total Cost: "<<cost_sum<<endl;
+
 }

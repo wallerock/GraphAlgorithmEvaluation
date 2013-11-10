@@ -51,6 +51,12 @@ Graph::Graph(char* filename){
     int cost;
 
     file.open(filename);
+
+    if(!file){
+    cout<<"File open error! check filename!\n";
+    return;
+    }
+
     file>>vertices;
     
     edges=0;

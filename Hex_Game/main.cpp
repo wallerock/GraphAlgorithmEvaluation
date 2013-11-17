@@ -55,6 +55,13 @@ int main( ) {
          cout<<"-----------------------------------------------------------------------"<<endl;
          firstPlayer=(firstPlayer+1)%2;
          moveCount++;   
+         if(hb.find_winner()==1){
+           cout<<"you win!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"<<endl;
+           break;
+         }else if(hb.find_winner()==-1){
+           cout<<"computer win!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"<<endl;
+           break;
+         }
       
      }
 

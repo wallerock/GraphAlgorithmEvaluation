@@ -45,7 +45,7 @@ HexBoard::HexBoard(int s)
 
 int HexBoard::add_move(int x, int y, Player p){
     if(x<0||x>>size-1||y<0||y>size-1){
-       cout<<"input is illegal !!"<<endl;
+       cout<<" Invalid position!"<<endl;
        return -1;
     }
     
@@ -78,7 +78,7 @@ int HexBoard::add_move(int x, int y, Player p){
        }
     }
      
-    cout<<"this position is occupied"<<endl;
+    cout<<"ERROR - Location already occupied!"<<endl;
     return -1;
 
 }

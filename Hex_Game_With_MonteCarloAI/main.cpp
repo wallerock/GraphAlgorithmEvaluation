@@ -2,6 +2,8 @@
 #include "HexBoard.h"
 using namespace std;
 
+
+//inactive for playing hex game
 int main( ) {
      int size;
      char YoN;
@@ -62,10 +64,8 @@ int main( ) {
             cout<<"Computer AI Thinking!!!!!"<<endl;
             int* loc;
             loc=hb.AI_move();
-            //cout<<loc[0]<<" "<<loc[1]<<endl;
             input_loc_x=loc[0];
             input_loc_y=loc[1];
-            //cout<<input_loc_x<<" "<<input_loc_y<<endl;
             
          }
 
